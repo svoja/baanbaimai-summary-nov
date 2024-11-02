@@ -6,7 +6,8 @@ fetch("exData.json")
         return response.json();
     })
     .then(data => {
-        console.log(data)
+        console.time("Data Processing Time"); // Start timing
+
         const uniqueStudents = new Set();
         const studentData = [];
         const listElement = document.getElementById("list");
@@ -108,7 +109,7 @@ fetch("exData.json")
                 student.title.toLowerCase().includes(filterValue) ||
                 student.className.toLowerCase().includes(filterValue) ||
                 student.teacherName.toLowerCase().includes(filterValue) ||
-                student.timeSlot.toLowerCase().includes(filterValue)
+                student.timeSlot.toLowerCase().includes(filterValue) // Add timeSlot filtering
             );
 
             // Update the result count as a badge
@@ -121,5 +122,7 @@ fetch("exData.json")
 
         // Initial display
         displayStudents(currentPage);
+        
+        console.timeEnd("Data Processing Time"); // End timing and log the time taken
     })
     .catch(error => console.error("Error fetching JSON:", error));
