@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Summary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="text-center my-3">สรุปการเรียนในเดือนพฤษจิกายน</h1>
+        </header>
+        <main class="my-3">
+            <p class="text-center">จำนวนนักเรียนในเดือนพฤษจิกายน
+                <span class="badge bg-primary" id="studentQuantity"></span>
+                คน
+            </p>
+            <!-- Filter Input -->
+            <div class="input-group mb-3">
+                <input type="text" id="filterInput" class="form-control" placeholder="ค้นหาจากชื่อ, ชื่อผู้สอน, วิชา, เวลาเรียน" aria-label="Search">
+            </div>
+        </main>
+        <p class="text-center my-3">
+            พบผลลัพธ์ <span id="resultCount" class="badge bg-success">0</span> รายการ
+        </p>        
+        <!-- Table -->
+        <table class="table table-bordered my-3">
+            <thead class="table">
+                <tr>
+                    <th scope="col" class="col-id text-center">#</th>
+                    <th scope="col" class="col-student">ชื่อนักเรียน</th>
+                    <th scope="col" class="col-subject">วิชาที่เรียน</th>
+                    <th scope="col" class="col-teacher">ครูผู้สอน</th>
+                    <th scope="col" class="col-hours">เวลาที่เรียน</th>
+                </tr>
+            </thead>
+            <tbody id="list">
+                <!-- Js -->
+            </tbody>
+        </table>
+        <!-- Pagination Controls -->
+        <nav>
+            <ul class="pagination justify-content-center" id="pagination">
+                <li class="page-item">
+                    <button class="page-link" id="firstPage">First</button>
+                </li>
+                <li class="page-item">
+                    <button class="page-link" id="prevPage">Previous</button>
+                </li>
+                <li class="page-item">
+                    <button class="page-link" id="nextPage">Next</button>
+                </li>
+                <li class="page-item">
+                    <button class="page-link" id="lastPage">Last</button>
+                </li>
+            </ul>
+        </nav>
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>
